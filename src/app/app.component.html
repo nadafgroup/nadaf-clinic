@@ -1,0 +1,317 @@
+<!-- WhatsApp Float -->
+<a href="https://wa.me/918669103437" class="whatsapp-float" target="_blank">
+  <i class="fab fa-whatsapp"></i>
+  <span class="whatsapp-tooltip">WhatsApp</span>
+</a>
+
+<!-- Scroll to Top -->
+<button class="scroll-top" (click)="scrollTo('home')" *ngIf="isScrolled">
+  <i class="fas fa-arrow-up"></i>
+</button>
+
+<!-- Navigation -->
+<nav class="navbar" [class.scrolled]="isScrolled">
+  <div class="nav-container">
+    <div class="nav-logo">
+      <div class="logo-icon pulse">
+        <i class="fas fa-heartbeat"></i>
+      </div>
+      <span>नदाफ <span class="logo-highlight">फिजिओ</span></span>
+      <span class="logo-badge">क्लिनिक</span>
+    </div>
+    <ul class="nav-menu" [class.active]="isMenuOpen">
+      <li *ngFor="let item of navItems">
+        <a [href]="item.link" (click)="scrollTo(item.link.replace('#', '')); $event.preventDefault()">
+          <span class="nav-dot"></span> {{ item.name }}
+        </a>
+      </li>
+      <li>
+        <a href="#contact" class="nav-cta" (click)="scrollTo('contact'); $event.preventDefault()">
+          <i class="fas fa-calendar-check"></i> अपॉइंटमेंट
+        </a>
+      </li>
+    </ul>
+    <div class="hamburger" [class.active]="isMenuOpen" (click)="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section id="home" class="hero">
+  <div class="hero-particles">
+    <div class="particle" *ngFor="let p of [1,2,3,4,5,6,7,8,9,10]"></div>
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-text">
+      <span class="hero-badge">
+        <i class="fas fa-heartbeat"></i> 
+        <span>विश्वासार्ह फिजिओथेरपी</span>
+        <span class="badge-shine"></span>
+      </span>
+      <h1>
+        <span class="typing-text">वेदनामुक्त जीवनासाठी</span><br>
+        <span class="highlight">विश्वासार्ह</span> फिजिओथेरपी
+      </h1>
+      <p class="hero-description">
+        <span class="desc-line"><i class="fas fa-check-circle"></i> आरोग्यदायी हालचाल</span>
+        <span class="desc-line"><i class="fas fa-check-circle"></i> वेदनामुक्त जीवन</span>
+        <span class="desc-line"><i class="fas fa-check-circle"></i> उत्तम आरोग्य</span>
+      </p>
+      <div class="hero-buttons">
+        <a href="#contact" class="btn-primary" (click)="scrollTo('contact'); $event.preventDefault()">
+          <i class="fas fa-calendar-check"></i> अपॉइंटमेंट बुक करा
+          <span class="btn-shine"></span>
+        </a>
+        <a href="#services" class="btn-secondary" (click)="scrollTo('services'); $event.preventDefault()">
+          <i class="fas fa-info-circle"></i> सेवा जाणून घ्या
+        </a>
+      </div>
+      <div class="hero-trust">
+        <div class="trust-item"><i class="fas fa-check-circle"></i> विश्वासार्ह</div>
+        <div class="trust-item"><i class="fas fa-check-circle"></i> व्यावसायिक</div>
+        <div class="trust-item"><i class="fas fa-check-circle"></i> परिणामकारक</div>
+      </div>
+    </div>
+    <div class="hero-image-wrapper">
+      <div class="hero-image">
+        <div class="image-ring ring1"></div>
+        <div class="image-ring ring2"></div>
+        <div class="image-ring ring3"></div>
+        <i class="fas fa-user-md"></i>
+        <div class="floating-card card1"><i class="fas fa-spine"></i> पाठदुखी</div>
+        <div class="floating-card card2"><i class="fas fa-joint"></i> सांधेदुखी</div>
+        <div class="floating-card card3"><i class="fas fa-running"></i> खेळ दुखापत</div>
+        <div class="floating-card card4"><i class="fas fa-heartbeat"></i> पुनर्वसन</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Stats Section -->
+<section class="stats-section">
+  <div class="stats-grid">
+    <div class="stat-item" *ngFor="let stat of stats">
+      <div class="stat-icon"><i [class]="stat.icon"></i></div>
+      <div class="stat-number">{{ stat.number }}</div>
+      <div class="stat-label">{{ stat.label }}</div>
+      <div class="stat-glow"></div>
+    </div>
+  </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="about-section">
+  <div class="section-header">
+    <span class="section-subtitle">आमच्याबद्दल</span>
+    <h2 class="section-title">तुमच्या आरोग्याची <span class="highlight">काळजी</span> घेणारे</h2>
+    <div class="title-line"></div>
+    <p class="section-desc">नदाफ फिजिओ क्लिनिकमध्ये आम्ही आधुनिक, वैज्ञानिक आणि वैयक्तिक फिजिओथेरपी उपचार देतो.</p>
+  </div>
+  <div class="about-grid">
+    <div class="about-card">
+      <div class="about-icon"><i class="fas fa-flag"></i></div>
+      <h3>आमचे ध्येय</h3>
+      <p>प्रत्येक रुग्णाला वेदनामुक्त, सक्रिय आणि निरोगी जीवन जगण्यासाठी सर्वोत्तम फिजिओथेरपी सेवा प्रदान करणे.</p>
+    </div>
+    <div class="about-card">
+      <div class="about-icon"><i class="fas fa-eye"></i></div>
+      <h3>आमची दृष्टी</h3>
+      <p>उच्च दर्जाची, परिणामकारक आणि विश्वासार्ह फिजिओथेरपी सेवा देऊन समाजातील आरोग्य आणि जीवनमानात सकारात्मक बदल घडवणे.</p>
+    </div>
+    <div class="about-card">
+      <div class="about-icon"><i class="fas fa-handshake"></i></div>
+      <h3>आमचे वचन</h3>
+      <p>तुमचे आरोग्य, तुमचा विश्वास आणि तुमचे समाधान हेच आमचे सर्वात मोठे यश आहे.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Services Section -->
+<section id="services" class="services-section">
+  <div class="section-header">
+    <span class="section-subtitle">आमच्या सेवा</span>
+    <h2 class="section-title">आम्ही देत असलेल्या <span class="highlight">विशेष</span> सेवा</h2>
+    <div class="title-line"></div>
+    <p class="section-desc">वेदना कमी करणे, शरीराची हालचाल सुधारणा आणि स्नायू व सांधे बळकट करण्यासाठी विविध सेवा.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card" *ngFor="let service of services" [style.background]="service.gradient">
+      <div class="service-icon">
+        <i [class]="service.icon"></i>
+      </div>
+      <h3>{{ service.name }}</h3>
+      <p>{{ service.desc }}</p>
+      <div class="service-shine"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Why Choose Us -->
+<section class="why-section">
+  <div class="section-header">
+    <span class="section-subtitle">आम्हालाच का निवडाल?</span>
+    <h2 class="section-title">तुम्हाला <span class="highlight">सर्वोत्तम</span> का मिळेल</h2>
+    <div class="title-line"></div>
+  </div>
+  <div class="why-grid">
+    <div class="why-item" *ngFor="let reason of reasons">
+      <div class="why-icon"><i [class]="reason.icon"></i></div>
+      <h4>{{ reason.text }}</h4>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section id="testimonials" class="testimonials-section">
+  <div class="section-header">
+    <span class="section-subtitle">रुग्णांचे मत</span>
+    <h2 class="section-title">आमचे <span class="highlight">समाधानी</span> रुग्ण</h2>
+    <div class="title-line"></div>
+  </div>
+  <div class="testimonials-grid">
+    <div class="testimonial-card" *ngFor="let testimonial of testimonials">
+      <div class="testimonial-stars">
+        <i class="fas fa-star" *ngFor="let star of [1,2,3,4,5]"></i>
+      </div>
+      <div class="testimonial-quote"><i class="fas fa-quote-left"></i></div>
+      <p>{{ testimonial.text }}</p>
+      <div class="testimonial-author">
+        <strong>{{ testimonial.name }}</strong>
+        <span>{{ testimonial.location }}</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="contact-section">
+  <div class="section-header">
+    <span class="section-subtitle">संपर्क</span>
+    <h2 class="section-title">आजच <span class="highlight">अपॉइंटमेंट</span> बुक करा</h2>
+    <div class="title-line"></div>
+    <p class="section-desc">तुमच्या आरोग्यासाठी पहिलं पाऊल उचला. आम्ही तुमची मदत करण्यासाठी येथे आहोत.</p>
+  </div>
+  <div class="contact-grid">
+    <div class="contact-info">
+      <div class="contact-item">
+        <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+        <div>
+          <h4>फोन</h4>
+          <a href="tel:+918669103437">+91 86691 03437</a>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+        <div>
+          <h4>ई-मेल</h4>
+          <a href="mailto:nadafgroup.in@gmail.com">nadafgroup.in@gmail.com</a>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+        <div>
+          <h4>पत्ता</h4>
+          <p>नांदणी, ता. शिरोळ, जि. कोल्हापूर</p>
+          <p class="pin">महाराष्ट्र - 416102</p>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon"><i class="fas fa-clock"></i></div>
+        <div>
+          <h4>कार्यवेळ</h4>
+          <p *ngFor="let hour of workingHours">{{ hour.day }}: {{ hour.hours }}</p>
+        </div>
+      </div>
+      <div class="contact-social">
+        <a href="#" class="social-circle"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="social-circle"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="social-circle"><i class="fab fa-youtube"></i></a>
+        <a href="#" class="social-circle"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+    <div class="contact-form-wrapper">
+      <div class="contact-form">
+        <h3>संपर्क करा</h3>
+        <form>
+          <div class="form-group">
+            <i class="fas fa-user"></i>
+            <input type="text" placeholder="तुमचे नाव" required>
+          </div>
+          <div class="form-group">
+            <i class="fas fa-envelope"></i>
+            <input type="email" placeholder="ई-मेल" required>
+          </div>
+          <div class="form-group">
+            <i class="fas fa-phone"></i>
+            <input type="tel" placeholder="फोन नंबर" required>
+          </div>
+          <div class="form-group">
+            <i class="fas fa-list"></i>
+            <select required>
+              <option value="">सेवा निवडा</option>
+              <option *ngFor="let service of services" [value]="service.name">{{ service.name }}</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <i class="fas fa-comment"></i>
+            <textarea placeholder="तुमचा संदेश" rows="4"></textarea>
+          </div>
+          <button type="submit" class="btn-primary btn-block">
+            <i class="fas fa-paper-plane"></i> संदेश पाठवा
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Slogans -->
+<section class="slogans-section">
+  <div class="slogans-grid">
+    <span><i class="fas fa-heartbeat"></i> वेदनामुक्त हालचाल, निरोगी आयुष्य.</span>
+    <span><i class="fas fa-shoe-prints"></i> प्रत्येक पावलात आरोग्याची साथ.</span>
+    <span><i class="fas fa-hands-helping"></i> तुमच्या पुनर्वसनाचा विश्वासू साथीदार.</span>
+    <span><i class="fas fa-smile"></i> निरोगी शरीर, आनंदी जीवन.</span>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-section">
+      <h3><i class="fas fa-heartbeat"></i> नदाफ फिजिओ क्लिनिक</h3>
+      <p>वेदनामुक्त जीवनासाठी विश्वासार्ह फिजिओथेरपी सेवा</p>
+      <div class="social-links">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+        <a href="#"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+    <div class="footer-section">
+      <h4>द्रुत दुवे</h4>
+      <ul>
+        <li *ngFor="let item of navItems">
+          <a [href]="item.link" (click)="scrollTo(item.link.replace('#', '')); $event.preventDefault()">{{ item.name }}</a>
+        </li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h4>कार्यवेळ</h4>
+      <p *ngFor="let hour of workingHours">{{ hour.day }}: {{ hour.hours }}</p>
+    </div>
+    <div class="footer-section">
+      <h4>संपर्क</h4>
+      <p><i class="fas fa-phone"></i> +91 86691 03437</p>
+      <p><i class="fas fa-envelope"></i> nadafgroup.in@gmail.com</p>
+      <p><i class="fas fa-map-marker-alt"></i> नांदणी, ता. शिरोळ</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© {{ currentYear }} नदाफ फिजिओ क्लिनिक. Dr. Sanobar Rafik Nadaf (MPT)</p>
+  </div>
+</footer>
